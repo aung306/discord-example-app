@@ -27,10 +27,25 @@ const TEST_COMMAND = {
 };
 
 // ping command
+const TYLER_COMMAND = {
+  name: 'tyler',
+  description: 'love command',
+  options: [],
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
+// ping command
 const ANGI_COMMAND = {
   name: 'angi',
   description: 'ping command',
-  options: [],
+  options: [    {
+    type: 9,
+    name: 'user',
+    description: 'Ping this user',
+    required: true,
+  },],
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
@@ -39,14 +54,12 @@ const ANGI_COMMAND = {
 // Command containing options
 const CHALLENGE_COMMAND = {
   name: 'challenge',
-  description: 'Challenge to a match of rock paper scissors',
+  description: 'ping this loser',
   options: [
     {
-      type: 3,
-      name: 'object',
-      description: 'Pick your object',
-      required: true,
-      choices: createCommandChoices(),
+      type: 9,
+      name: 'user',
+      description: 'Pick the user',
     },
   ],
   type: 1,
@@ -54,6 +67,6 @@ const CHALLENGE_COMMAND = {
   contexts: [0, 2],
 };
 
-const ALL_COMMANDS = [TEST_COMMAND, ANGI_COMMAND, CHALLENGE_COMMAND];
+const ALL_COMMANDS = [TEST_COMMAND, TYLER_COMMAND, ANGI_COMMAND, CHALLENGE_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
