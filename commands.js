@@ -30,6 +30,7 @@ const TEST_COMMAND = {
 const ANGI_COMMAND = {
   name: 'angi',
   description: 'ping command',
+  options: [],
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
