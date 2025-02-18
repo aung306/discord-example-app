@@ -64,11 +64,15 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     }
 
     if (name === 'angi' && id) {
+      // Interaction context
+      const context = req.body.context;
+      // User ID is in user field for (G)DMs, and member for servers
+      const userId = context === 0 ? req.body.member.id : req.body.id;
       // Send a message into the channel where command was triggered from
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `hey. you need to get on <@${id}>`,
+          content: `hey. you need to get on <@${userId}>`,
         },
       });
     }

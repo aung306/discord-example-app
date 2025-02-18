@@ -45,7 +45,7 @@ const ANGI_COMMAND = {
 
 const TYLER_COMMAND = {
   name: 'tyler',
-  description: 'ping command',
+  description: 'angi loves tyler',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
