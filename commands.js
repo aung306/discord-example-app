@@ -31,6 +31,14 @@ const ANGI_COMMAND = {
   name: 'angi',
   description: 'ping command',
   type: 1,
+  options: [
+    {
+      type: 6,
+      name: 'user',
+      description: 'ping this loser',
+      required: true,
+    },
+  ],
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };

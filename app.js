@@ -68,8 +68,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          // Fetches a random emoji to send from a helper function
-          content: `hey. you need to get on.`,
+          content: `hey. you need to get on <@${userId}>`,
         },
       });
     }
