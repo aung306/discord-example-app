@@ -92,7 +92,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     return res.send({
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
     data: {
-        content: `Rock papers scissors challenge from <@${id}>`,
+        content: `Rock papers scissors challenge from <@${userId}>`,
         components: [
         {
             type: MessageComponentTypes.ACTION_ROW,
@@ -178,7 +178,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     
           try {
             // Send results
-            await res.send({
+            res.send({
               type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
               data: { content: resultStr },
             });

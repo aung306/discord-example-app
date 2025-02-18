@@ -27,25 +27,17 @@ const TEST_COMMAND = {
 };
 
 // ping command
-const TYLER_COMMAND = {
-  name: 'tyler',
-  description: 'love command',
-  options: [],
+const ANGI_COMMAND = {
+  name: 'angi',
+  description: 'ping command',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
 
-// ping command
-const ANGI_COMMAND = {
-  name: 'angi',
+const TYLER_COMMAND = {
+  name: 'tyler',
   description: 'ping command',
-  options: [    {
-    type: 9,
-    name: 'user',
-    description: 'Ping this user',
-    required: true,
-  },],
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
@@ -54,12 +46,14 @@ const ANGI_COMMAND = {
 // Command containing options
 const CHALLENGE_COMMAND = {
   name: 'challenge',
-  description: 'ping this loser',
+  description: 'Challenge to a match of rock paper scissors',
   options: [
     {
-      type: 9,
-      name: 'user',
-      description: 'Pick the user',
+      type: 3,
+      name: 'object',
+      description: 'Pick your object',
+      required: true,
+      choices: createCommandChoices(),
     },
   ],
   type: 1,
