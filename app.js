@@ -63,12 +63,12 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       });
     }
 
-    if (name === 'angi') {
+    if (name === 'angi' && id) {
       // Send a message into the channel where command was triggered from
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `hey. you need to get on <@${userId}>`,
+          content: `hey. you need to get on <@${id}>`,
         },
       });
     }
